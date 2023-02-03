@@ -24,6 +24,12 @@
                 return {
                     greeting: "Hello World! What is up?"
                 };
+            },
+
+            mounted() {
+                setTimeout(() => {
+                    this.greeting = 'Changed'
+                }, 3000);
             }
         }).mount('#app');
     </script>
