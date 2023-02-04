@@ -25,7 +25,6 @@
         .text-green {
             color: green;
         }
-
     </style>
 </head>
 
@@ -33,7 +32,7 @@
 
     <div id="app">
         <!-- We want to bind the attribute called Class to the result of this expression -->
-        <button v-bind:class="buttonClasses">Click Me</button>
+        <button :class="buttonClasses" v-on:click="toggle">Click Me</button>
     </div>
 
     <script>
@@ -42,6 +41,12 @@
                 return {
                     buttonClasses: "text-green"
                 };
+            },
+
+            methods: {
+                toggle() {
+                    this.buttonClasses = 'text-red';
+                }
             }
         }).mount('#app');
     </script>
