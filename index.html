@@ -18,7 +18,9 @@
             <ul>
                 <!-- Always add a :key to any element that has a "for" to prevent wonky results -->
                 <!-- EX: Without :key, when checked, the property would still appear in the In Progress section when it's completed. -->
-                <li v-for="assignment in assignments.filter(a => ! a.complete)" :key="assignment.id">
+                <li 
+                    v-for="assignment in assignments.filter(a => ! a.complete)" :key="assignment.id"
+                >
                     <label>
                         {{ assignment.name }}
                         <!-- When working with foreign inputs, always bind them with the v-model -->
@@ -28,11 +30,15 @@
             </ul>
         </section>
 
-        <section class="mt-8">
-            <h2 class="font-bold mb-2">Completed Assigments</h2>
+        <!-- Only show this section if we have assignments that have been completed, and the resulting array is more than 0. -->
+        <!-- Difference between v-show and v-if. v-show = toggles. v-if = one time thing. -->
+        <section v-show="assignments.filter(a => a.complete).length" class="mt-8">
+            <h2 class="font-bold mb-2">Completed</h2>
             <ul>
                 <!-- Only filter down when the properties (assigments) are set to true. -->
-                <li v-for="assignment in assignments.filter(a => a.complete)" :key="assignment.id">
+                <li 
+                    v-for="assignment in assignments.filter(a => a.complete)" :key="assignment.id"
+                >
                     <label>
                         {{ assignment.name }}
                         <!-- When working with foreign inputs, always bind them with the v-model -->
