@@ -16,8 +16,18 @@
         <section>
             <h2 class="font-bold mb-2">Assignments</h2>
             <ul>
-                <li v-for="assignment in assignments">{{ assignment.name }} </li>
+                <li v-for="assignment in assignments">
+                    <label>
+                        {{ assignment.name }}
+                        <!-- When working with foreign inputs, always bind them with the v-model -->
+                        <input type="checkbox" v-model="assignment.complete">
+                    </label>
+                </li>
             </ul>
+
+            <pre>
+                {{ assignments }}
+            </pre>
         </section>
     </div>
 
