@@ -14,9 +14,11 @@
 
     <div id="app">
         <section>
-            <h2 class="font-bold mb-2">Assignments</h2>
+            <h2 class="font-bold mb-2">In Progress</h2>
             <ul>
-                <li v-for="assignment in assignments">
+                <!-- Always add a :key to any element that has a "for" to prevent wonky results -->
+                <!-- EX: Without :key, when checked, the property would still appear in the In Progress section when it's completed. -->
+                <li v-for="assignment in assignments.filter(a => ! a.complete)" :key="assignment.id">
                     <label>
                         {{ assignment.name }}
                         <!-- When working with foreign inputs, always bind them with the v-model -->
@@ -24,10 +26,20 @@
                     </label>
                 </li>
             </ul>
+        </section>
 
-            <pre>
-                {{ assignments }}
-            </pre>
+        <section class="mt-8">
+            <h2 class="font-bold mb-2">Completed Assigments</h2>
+            <ul>
+                <!-- Only filter down when the properties (assigments) are set to true. -->
+                <li v-for="assignment in assignments.filter(a => a.complete)" :key="assignment.id">
+                    <label>
+                        {{ assignment.name }}
+                        <!-- When working with foreign inputs, always bind them with the v-model -->
+                        <input type="checkbox" v-model="assignment.complete">
+                    </label>
+                </li>
+            </ul>
         </section>
     </div>
 
@@ -35,10 +47,11 @@
         let app = {
             data() {
                 return {
+                    // Assignments may be stored in the DB. So add unique IDs to store each one.
                     assignments: [
-                        { name: "Finish Project", complete: false },
-                        { name: "Read Chapter 4", complete: false },
-                        { name: "Turn in Homework", complete: false }
+                        { name: "Finish Project", complete: false, id: 1 },
+                        { name: "Read Chapter 4", complete: false, id: 2 },
+                        { name: "Turn in Homework", complete: false, id: 3 }
                     ]
                 }
             }
