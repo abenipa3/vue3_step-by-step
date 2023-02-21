@@ -7,9 +7,14 @@ export default {
                 <slot />
             </button>
         `,
+
+        props: {
+            type: String
+        },
+
     data() {
         return {
             processing: true
         };
     }
-}
+};
