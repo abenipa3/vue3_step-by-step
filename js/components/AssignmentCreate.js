@@ -10,24 +10,17 @@ export default {
     </form>
     `,
 
-    props: {
-        assignments: Array
-    },
-
     data() {
         return {
-            newAssignment: ''
+            newAssignment: '' 
         }
     },
 
     methods: {
         // Prevents page from refreshing after submit!
         add() {
-            this.assignments.push({
-                name: this.newAssignment,
-                completed: false,
-                id: this.assignments.length + 1
-            });
+            // $emit is a Vue specific method.
+            this.$emit('add', this.newAssignment);
 
             this.newAssignment = '';
         }
