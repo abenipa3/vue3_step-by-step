@@ -14,6 +14,7 @@ export default {
 
     <assignment-tags 
         :initial-tags="assignments.map(a => a.tag)"
+        // Magic Event Variable
         @change:"currentTag = $event"
     />
 
