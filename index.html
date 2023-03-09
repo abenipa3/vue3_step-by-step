@@ -10,17 +10,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-full grid place-items-center bg-gray-800 text-white">
+<body class="h-full grid place-items-center bg-gray-800">
 
     <div id="app">
-
+        <input type="text" :value="name" @input="name = $event.target.value">
     </div>
 
-    <!-- Adding type="module" lets the in-line script know that this should be treated as a module! -->
-    <script type="module">
-        import App from "./js/components/App.js";
-
-        Vue.createApp(App).mount('#app');
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    name: ''
+                };
+            }
+        }).mount('#app');
     </script>
 
 </body>
