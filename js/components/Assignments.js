@@ -14,11 +14,7 @@ export default {
     `,
     data() {
         return {
-            assignments: [
-                { name: "Finish Project", complete: false, id: 1, tag: 'math' },
-                { name: "Read Chapter 4", complete: false, id: 2, tag: 'science' },
-                { name: "Turn in Homework", complete: false, id: 3, tag: 'math' },
-            ],
+            assignments: [],
         }
     },
 
