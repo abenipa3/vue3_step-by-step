@@ -12,6 +12,6 @@ This repo will also include:
 - Wiki, which includes notes/reviews of what I've learned.
 
 ## How to Run
-With Node installed, run `npx serve`.
+With Node installed, run `npm run start`.
 
 <img width="370" alt="Screen Shot 2023-02-02 at 4 34 12 PM" src="https://user-images.githubusercontent.com/38295612/216483088-0e503605-443b-42c2-8559-4c5745a2fbf6.png">
