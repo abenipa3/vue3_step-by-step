@@ -27,6 +27,15 @@ export default {
         }
     },
 
+    created() {
+        // Returns a promise to get data
+        fetch('http://localhost:3001/assignments')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+    },
+
     methods: {
         add(name) {
             this.assignments.push({
