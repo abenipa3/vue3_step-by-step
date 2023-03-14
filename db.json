@@ -17,6 +17,12 @@
             "complete": false,
             "id": 1,
             "tag": "math"
+        },
+        {
+            "name": "Finish Laracasts Video",
+            "complete": true,
+            "id": 1,
+            "tag": "programming"
         }
     ]
 }

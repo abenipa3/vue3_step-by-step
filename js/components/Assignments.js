@@ -31,8 +31,8 @@ export default {
         // Returns a promise to get data
         fetch('http://localhost:3001/assignments')
         .then(response => response.json())
-        .then(data => {
-            console.log(data);
+        .then(assignments => {
+            this.assignments = assignments;
         })
     },
 
