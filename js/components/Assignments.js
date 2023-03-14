@@ -5,13 +5,18 @@ export default {
     components: { AssignmentList, AssignmentCreate },
 
     template: `
-    <section class="flex">
-        <assignment-list :assignments="filters.inProgress" title="In Progress"></assignment-list>
-        <assignment-list :assignments="filters.completed" title="Completed"></assignment-list>
+    <section class="flex gap-8">
 
+        <assignment-list :assignments="filters.inProgress" title="In Progress">
+        
         <assignment-create @add="add"></assignment-create>
+
+        </assignment-list>
+
+        <assignment-list :assignments="filters.completed" title="Completed"></assignment-list>
     </section>
     `,
+    
     data() {
         return {
             assignments: [],

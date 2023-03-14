@@ -5,7 +5,7 @@ export default {
     components: { Assignment, AssignmentTags },
 
     template: `
-    <section v-show="assignments.length">
+    <section v-show="assignments.length" class="w-60">
         <h2 class="font-bold mb-2">
             {{ title }}
             <span>({{ assignments.length }})</span>
@@ -23,6 +23,9 @@ export default {
                 :assignment="assignment"
             ></assignment>
         </ul>
+
+        <slot></slot>
+        
     </section>
     `,
 
