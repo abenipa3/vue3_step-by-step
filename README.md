@@ -14,4 +14,4 @@ This repo will also include:
 ## How to Run
 With Node installed, run `npm run start`.
 
-![image](https://user-images.githubusercontent.com/38295612/225215202-6dfe925b-5797-4740-8422-f94d420ec3a1.png)
+![image](https://user-images.githubusercontent.com/38295612/225215322-8698f11e-9f6a-4a18-8720-1f7f4ae9e4c5.png)
