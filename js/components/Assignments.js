@@ -13,13 +13,21 @@ export default {
 
         </assignment-list>
 
-        <assignment-list :assignments="filters.completed" title="Completed" can-toggle></assignment-list>
+        <div v-show="showCompleted">
+                <assignment-list 
+                :assignments="filters.completed" 
+                title="Completed" 
+                can-toggle
+                @toggle="showCompleted = !showCompleted"
+                ></assignment-list>
+        </div>
     </section>
     `,
     
     data() {
         return {
             assignments: [],
+            showCompleted: true
         }
     },
 
